@@ -25,6 +25,7 @@ Tasks:
   fnm             Install fnm and latest Node.js
   docker          Install docker and compose plugin
   go              Install latest golang
+  rust            Install latest rust with rustup
 ```
 
 ## Add new task
