@@ -11,15 +11,20 @@ version:: version/rust
 install/rust: common
 ifeq ($(wildcard $(RUST_DIR)),)
 	echo '[$@] install rust with rustup...'
-	curl https://sh.rustup.rs -sSf | sh -s -- -q -y --no-modify-path > /dev/null
+	curl https://sh.rustup.rs -sSf | sh -s -- -q -y --no-modify-path &> /dev/null
 endif
 
 	echo '[$@] create $(RUST_BASHRC)...'
 	echo '$(RUST_BASHRC_LINE)' > $(RUST_BASHRC)
 
 uninstall/rust:
+ifneq ($(shell command -v rustup),)
 	echo '[$@] uninstall with rustup...'
-	rustup self uninstall -y > /dev/null
+	rustup self uninstall -y &> /dev/null
+endif
+
+	echo '[$@] remove $(RUST_BASHRC)...'
+	sudo rm -f $(RUST_BASHRC)
 
 version/rust:
 ifeq ($(shell command -v rustup),)
