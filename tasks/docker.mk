@@ -19,12 +19,10 @@ ifeq ("$(wildcard $(DOCKER_GPG))","")
 	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o $($(DOCKER_GPG))
 endif
 
-ifeq ("$(wildcard $(DOCKER_LIST))","")
 	echo '[$@] create $(DOCKER_LIST)...'
 	echo \
 		"deb [arch=$$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \
 		$$(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-endif
 
 	echo '[$@] remove old packages...'
 	sudo apt-get -y remove $(DOCKER_OLD_PKGS) > /dev/null
