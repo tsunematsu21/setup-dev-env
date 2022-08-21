@@ -42,9 +42,9 @@ version/fnm:
 ifeq ($(wildcard $(FNM_DIR)),)
 	echo [fnm] not installed
 else
-	@. $(FNM_BASHRC)
-	@echo [fnm]
-	@echo "  fnm  : $$(fnm --version)"
-	@echo "  node : $$(node --version)"
-	@echo "  yarn : $$(yarn --version)"
+	. $(FNM_BASHRC)
+	echo [fnm]
+	echo "  fnm  : $$(fnm --version)"
+	echo "  node : $$(node --version)"
+	echo "  yarn : $$(yarn --version)"
 endif
