@@ -1,5 +1,5 @@
 FNM_DIR			:=	$(HOME)/.fnm
-FNM_BASHRC	?=	$(BASHRC_DIR)/sdkman.sh
+FNM_BASHRC	?=	$(BASHRC_DIR)/fnm.sh
 
 define FNM_BASHRC_CONTENT
 export PATH=$(FNM_DIR):$$PATH
