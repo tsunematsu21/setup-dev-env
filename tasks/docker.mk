@@ -5,7 +5,6 @@ DOCKER_GPG_PKGS		:=	ca-certificates curl gnupg lsb-release
 DOCKER_OLD_PKGS		:=	docker docker-engine docker.io containerd runc
 DOCKER_PKGS				:=	docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-# short name of install task
 docker: install/docker ## Install docker and compose plugin
 
 install:: install/docker

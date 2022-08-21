@@ -30,7 +30,7 @@ Tasks:
 ## Add new task
 
 ```bash
-# Create new .mk file from skelton
-$ TASK="hogehoge"; sed -e "s/_skelton/$TASK/" tasks/_skelton.mk > tasks/$TASK.mk
-# ... Edit new .mk file ...
+# Create <TASK_NAME>.mk file from skelton
+$ make tasks/<TASK_NAME>.mk
+# ... Edit new <TASK_NAME>.mk file ...
 ```
