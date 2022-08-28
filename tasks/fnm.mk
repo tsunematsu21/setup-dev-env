@@ -13,7 +13,7 @@ install:: install/fnm
 uninstall:: uninstall/fnm
 version:: version/fnm
 
-install/fnm:
+install/fnm: common
 ifeq ($(wildcard $(FNM_DIR)),)
 	echo '[$@] install fnm...'
 	curl -fsSL https://fnm.vercel.app/install | bash -s -- --skip-shell &> /dev/null
