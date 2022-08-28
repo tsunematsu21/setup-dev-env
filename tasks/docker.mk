@@ -16,7 +16,7 @@ ifeq ("$(wildcard $(DOCKER_GPG))","")
 	echo '[$@] create $(DOCKER_GPG)...'
 	sudo apt-get -y install $(DOCKER_GPG_PKGS) > /dev/null
 	sudo mkdir -p $(DOCKER_GPG_DIR)
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o $($(DOCKER_GPG))
+	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o $(DOCKER_GPG)
 endif
 
 	echo '[$@] create $(DOCKER_LIST)...'
